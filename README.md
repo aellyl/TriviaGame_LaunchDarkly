@@ -4,7 +4,7 @@
 
 1. Download the entire folder 
 2. unzip and do not change any of the file structure
-3. Edit `app.js` in assets/javascript folder and set the value of `clientId` to your LaunchDarkly client-side ID.  Set `flagKey` to an boolean feature flag.
+3. Edit `app.js` in `assets/javascript` folder and set the value of `clientId` to your LaunchDarkly client-side ID.  Set `flagKey` to an boolean feature flag.
 
 ```
 const clientSideID = 'yourclientId';
