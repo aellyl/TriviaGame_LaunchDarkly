@@ -1,7 +1,7 @@
 //$(document).ready(function() {
 //Set up LaunchDarkly variables
-const clientId="62a637c0a0b2400c3162e927";
-const flagKey="shortLongGame";
+const clientId="yourclientid";
+const flagKey="yourflagkey";
 const user = {
 	'key':'12345',
 	'name': 'Tester'
