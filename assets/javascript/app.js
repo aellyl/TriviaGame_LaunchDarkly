@@ -1,13 +1,29 @@
 //$(document).ready(function() {
 //Set up LaunchDarkly variables
-const clientId="yourclientid";
-const flagKey="yourflagkey";
+const clientId="your-client-key";
+const flagKey="shortLongGame";
 const user = {
 	'key':'12345',
-	'name': 'Tester'
+	'name': 'Tester',
+	'email': 'test1@example.com',
+  	privateAttributeNames: ['email'],
+	'custom': {
+		'age': 18	
+		}
 };
 
-const ldclient = LDClient.initialize(clientId, user);
+const user2 = {
+	'key':'678910',
+	'name': 'Tester2',
+	'custom': {
+		'age': 12	
+		}
+};
+
+const ldclient = LDClient.initialize(clientId, user, {
+  privateAttributeNames: ['email']
+});
+
 
 
 // Trivia Game variables
@@ -107,7 +123,8 @@ var qNotAnswered=0;
 ldclient.on("ready",() => {
 
 	var flagValue = ldclient.variation(flagKey,false);
-	console.log("current flageValue: " + flagValue);
+	console.log("SDK successfully connected! The value of "+flagKey+" is " + flagValue + " for " + user.key)
+	//console.log("current flageValue: " + flagValue);
 
 	if(flagValue)
 	{
