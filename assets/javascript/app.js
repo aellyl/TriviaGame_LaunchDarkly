@@ -1,11 +1,11 @@
 //$(document).ready(function() {
 //Set up LaunchDarkly variables
 const clientId="your-client-key";
-const flagKey="shortLongGame";
+const flagKey="shortOrLong";
 const user = {
 	'key':'12345',
-	'name': 'Tester',
-	'email': 'test1@example.com',
+	'name': 'Joe',
+	'email': 'joe@example.com',
   	privateAttributeNames: ['email'],
 	'custom': {
 		'age': 18	
@@ -14,7 +14,7 @@ const user = {
 
 const user2 = {
 	'key':'678910',
-	'name': 'Tester2',
+	'name': 'Jane',
 	'custom': {
 		'age': 12	
 		}
@@ -154,12 +154,14 @@ function clickStartButton(){
 
 function clickShortLongButton(){
 	$("body").on("click", "#shortG", function(event){
-	numQs=2;
+	numQs=ldclient.variation("NumQ_short",2);
+	console.log("The value of number of question for short is " + numQs + " for " + user.key);
 	startGame();
 });
 
 $("body").on("click", "#longG", function(event){
-	numQs=10;
+	numQs=ldclient.variation("NumQ_long",7);
+	console.log("The value of number of question for long is " + numQs + " for " + user.key);
 	startGame();
 });
 

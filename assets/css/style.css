@@ -34,6 +34,10 @@ button {
 	width: 150px;
 }
 
+.disabled {
+	display: none;
+}
+
 /*.btn-block{
 	background: rgb(142,50,255);
 background: -webkit-linear-gradient(left, rgba(142,50,255,1) 0%, rgba(79,49,247,1) 14%, rgba(0,84,219,1) 24%, rgba(8,191,201,1) 35%, rgba(7,198,58,1) 46%, rgba(93,224,0,1) 53%, rgba(220,224,0,1) 62%, rgba(247,239,19,1) 69%, rgba(255,178,0,1) 78%, rgba(255,106,0,1) 87%, rgba(221,0,3,1) 100%);
